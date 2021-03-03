@@ -11,6 +11,18 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
 
     {{--    MY CSS    --}}
+    <style>
+        body {
+            background-color: #cbd5e0;
+        }
+        img.slider_img {
+            height: 30rem;
+            object-fit: cover;
+        }
+        .carousel-caption {
+            background-color: #12324470;
+        }
+    </style>
 </head>
 <body>
 

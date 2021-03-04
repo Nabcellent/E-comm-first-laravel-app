@@ -22,6 +22,16 @@
         .carousel-caption {
             background-color: #12324470;
         }
+        .trending_wrapper > .col > div {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            grid-gap: 2rem;
+            padding: 0 20rem;
+        }
+        img.trending_img {
+            width: 100%;
+            height: 15rem;
+        }
     </style>
 </head>
 <body>

@@ -36,6 +36,13 @@
             height: 25rem;
             object-fit: cover;
         }
+        .search_btn,
+        .search_box {
+            height: 2rem;
+        }
+        .search_btn {
+            padding: .2rem .5rem;
+        }
     </style>
 </head>
 <body>

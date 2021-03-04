@@ -11,10 +11,10 @@
                 <li class="nav-item"><a class="nav-link" href="#">Orders</a></li>
             </ul>
             <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                    <form class="form-inline my-2 my-lg-0">
-                        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                <li class="nav-item d-flex">
+                    <form action="/search" class="form-inline my-2 my-lg-0">
+                        <input class="form-control mr-sm-2 search_box" type="search" name="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-success my-2 my-sm-0 search_btn" type="submit">Search</button>
                     </form>
                 </li>
                 <li class="nav-item"><a class="nav-link" href="#">Cart(0)</a></li>

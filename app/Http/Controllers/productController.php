@@ -17,4 +17,9 @@ class productController extends Controller
         $productData = Product::find($id);
         return View('details', ['product' => $productData]);
     }
+
+    function search(Request $req) {
+        //$productData = Product::find($id);
+        return $req -> input();
+    }
 }

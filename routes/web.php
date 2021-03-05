@@ -15,6 +15,10 @@ use App\Http\Controllers\productController;
 |
 */
 
+Route::view('/register', 'register');
+
+
+
 Route::get('/login', function () {
     return view('login');
 });
@@ -41,6 +45,8 @@ Route::get('/my-orders', [productController::class, 'myOrders']);
 
 
 Route::post('/login', [userController::class, 'login']);
+
+Route::post('/register', [userController::class, 'register']);
 
 Route::post('/add-cart', [productController::class, 'addToCart']);
 

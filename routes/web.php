@@ -36,8 +36,12 @@ Route::get('/remove-cart/{id}', [productController::class, 'removeCart']);
 
 Route::get('/order', [productController::class, 'order']);
 
+Route::get('/my-orders', [productController::class, 'myOrders']);
+
 
 
 Route::post('/login', [userController::class, 'login']);
 
 Route::post('/add-cart', [productController::class, 'addToCart']);
+
+Route::post('/checkout', [productController::class, 'checkout']);

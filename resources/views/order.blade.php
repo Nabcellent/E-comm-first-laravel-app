@@ -30,26 +30,27 @@
                     </tbody>
                 </table>
                 <div>
-                    <form>
+                    <form action="/checkout" method="POST">
+                        @csrf
                         <div class="form-group">
-                            <textarea name="email" class="form-control" placeholder="Enter your address"></textarea>
+                            <textarea name="address" class="form-control" placeholder="Enter your address"></textarea>
                         </div>
                         <div class="form-group">
                             <label for="payment">Payment Method</label>
                             <div class="custom-control custom-radio">
-                                <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input">
-                                <label class="custom-control-label" for="customRadio1">Online Payment</label>
+                                <input type="radio" id="online" name="payment_method" class="custom-control-input" value="online">
+                                <label class="custom-control-label" for="online">Online Payment</label>
                             </div>
                             <div class="custom-control custom-radio">
-                                <input type="radio" id="customRadio2" name="customRadio" class="custom-control-input">
-                                <label class="custom-control-label" for="customRadio2">M-pesa</label>
+                                <input type="radio" id="mpesa" name="payment_method" class="custom-control-input" value="m-pesa">
+                                <label class="custom-control-label" for="mpesa">M-pesa</label>
                             </div>
                             <div class="custom-control custom-radio">
-                                <input type="radio" id="customRadio2" name="customRadio" class="custom-control-input">
-                                <label class="custom-control-label" for="customRadio2">Payment On delivery</label>
+                                <input type="radio" id="delivery" name="payment_method" class="custom-control-input" value="on delivery">
+                                <label class="custom-control-label" for="delivery">Payment On delivery</label>
                             </div>
                         </div>
-                        <button type="submit" class="btn btn-primary">Place Order</button>
+                        <button type="submit" class="btn btn-success">Place Order</button>
                     </form>
                 </div>
             </div>

@@ -43,6 +43,9 @@
         .search_btn {
             padding: .2rem .5rem;
         }
+        img.cart_img {
+            max-height: 7rem;
+        }
     </style>
 </head>
 <body>

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use App\Models\Product;
 use App\Models\Cart;
 use Session;
@@ -46,5 +47,17 @@ class productController extends Controller
     static function cartItem() {
         $userId = Session::get('user')['id'];
         return Cart::where('user_id', $userId) -> count();
+    }
+
+    function cart(): \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Contracts\Foundation\Application
+    {
+        $userId = Session::get('user')['id'];
+        $cartItems = DB::table('cart')
+            -> join('products', 'cart.product_id', '=', 'products.id')
+            -> where('cart.user_id', $userId)
+            -> select('products.*')
+            -> get();
+
+        return view('/cart', ['cartItems' => $cartItems]);
     }
 }

@@ -29,7 +29,7 @@ if(Session::has('user')) {
                         <button class="btn btn-outline-success my-2 my-sm-0 search_btn" type="submit">Search</button>
                     </form>
                 </li>
-                <li class="nav-item"><a class="nav-link" href="#">Cart({{$total}})</a></li>
+                <li class="nav-item"><a class="nav-link" href="/cart">Cart({{$total}})</a></li>
 
                 @if(Session::has('user'))
 

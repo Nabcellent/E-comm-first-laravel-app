@@ -28,7 +28,9 @@ Route::get('/', [productController::class, 'index']);
 
 Route::get('/details/{id}', [productController::class, 'details']);
 
-Route::get('/search/', [productController::class, 'search']);
+Route::get('/search', [productController::class, 'search']);
+
+Route::get('/cart', [productController::class, 'cart']);
 
 
 

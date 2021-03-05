@@ -32,6 +32,10 @@ Route::get('/search', [productController::class, 'search']);
 
 Route::get('/cart', [productController::class, 'cart']);
 
+Route::get('/remove-cart/{id}', [productController::class, 'removeCart']);
+
+Route::get('/order', [productController::class, 'order']);
+
 
 
 Route::post('/login', [userController::class, 'login']);

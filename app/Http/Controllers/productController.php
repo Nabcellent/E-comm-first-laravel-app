@@ -55,9 +55,27 @@ class productController extends Controller
         $cartItems = DB::table('cart')
             -> join('products', 'cart.product_id', '=', 'products.id')
             -> where('cart.user_id', $userId)
-            -> select('products.*')
+            -> select('products.*', 'cart.id as cart_id')
             -> get();
 
         return view('/cart', ['cartItems' => $cartItems]);
+    }
+
+    function removeCart($id): \Illuminate\Routing\Redirector|\Illuminate\Contracts\Foundation\Application|\Illuminate\Http\RedirectResponse
+    {
+        Cart::destroy($id);
+        return redirect('/cart');
+    }
+
+    function order(): \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Contracts\Foundation\Application
+    {
+        $userId = Session::get('user')['id'];
+        $orderTotal = DB::table('cart')
+            -> join('products', 'cart.product_id', '=', 'products.id')
+            -> where('cart.user_id', $userId)
+            -> select('products.*', 'cart.id as cart_id')
+            -> sum('products.price');
+
+        return view('/order', ['orderTotal' => $orderTotal]);
     }
 }
